@@ -1,0 +1,46 @@
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+    <div >
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <h3>Enroll In Course</h3>
+            
+        </div>
+
+    </div>
+  
+    <div fxLayout="column" fxLayoutGap="10px">
+        <mat-form-field appearance="fill">
+            <mat-label>Student Name</mat-label>
+            <mat-select >
+                <mat-option  value='0'>
+                    Select Student Name
+                  </mat-option>
+                <mat-option *ngFor="let student of listofstudents" value="student.studentid" (click)=savestudentid(student) >
+                    {{student.fName}} {{student.lName}}
+                </mat-option>
+            </mat-select>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Instructor Name</mat-label>
+            <mat-select  >
+                <mat-option  value='0'>
+                    Select Instructor Name
+                </mat-option>
+                <mat-option *ngFor="let instructor of listofinstructors" value="instructor.instid" (click)=saveinstid(instructor)>
+                    {{instructor.fName}} {{instructor.lName}}
+                </mat-option>
+            </mat-select>
+
+        </mat-form-field>
+
+        <div   style="display:flex; justify-content: flex-end;">
+            <button class="mat-secondary" mat-stroked-button style="margin:20px" routerLink = "/" (click)=savetoenroll()   >Enroll</button>
+        </div> 
+    
+             
+           
+    </div>
+
+</div>
+

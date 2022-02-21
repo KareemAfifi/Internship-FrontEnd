@@ -1,0 +1,36 @@
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+    <div >
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <h3>Edit Course Info</h3>
+            
+        </div>
+
+    </div>
+    
+    <div fxLayout="column" fxLayoutGap="10px">
+            <mat-form-field appearance="outline">
+                <mat-label>Course ID</mat-label>
+                <input matInput placeholder="Course Name Here" type="text" readonly  [(ngModel)] = "coursetobeupdated.courseid" name="coursetobeupdated.courseid" >
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Course Name</mat-label>
+                <input matInput placeholder="Course Name Here" type="text" [(ngModel)] = "coursetobeupdated.coursename" name="coursetobeupdated.coursename"  >
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Credit Hours</mat-label>
+                <input matInput placeholder="Number Only" type="number" [(ngModel)] = "coursetobeupdated.credithours" name="coursetobeupdated.credithours" >
+            </mat-form-field>    
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Department Number</mat-label>
+                <input matInput placeholder="Number Only" type="number" [(ngModel)] = "coursetobeupdated.depid" name="coursetobeupdated.depid">
+            </mat-form-field>   
+            <div   style="display:flex; justify-content: flex-end;">
+            <button class="mat-secondary" mat-stroked-button style="margin:20px" routerLink='/' (click) = updatecourse(coursetobeupdated)>Save Changes</button>
+            </div>  
+           
+    </div>
+
+</div>
+

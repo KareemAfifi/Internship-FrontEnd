@@ -1,0 +1,32 @@
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+    <div >
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <h3>New Course Info</h3>
+            
+        </div>
+
+    </div>
+    <form action=""></form>
+    <div fxLayout="column" fxLayoutGap="10px">
+            <mat-form-field appearance="outline">
+                <mat-label>Course Name</mat-label>
+                <input matInput placeholder="Course Name Here" type="text" [(ngModel)]="coursetobeadded.coursename" name="coursetobeadded.coursename" >
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Credit Hours</mat-label>
+                <input matInput placeholder="Number Only" type="number" [(ngModel)]="coursetobeadded.credithours" name="coursetobeadded.coursename">
+            </mat-form-field>    
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Department Number</mat-label>
+                <input matInput placeholder="Number Only" type="number" [(ngModel)]="coursetobeadded.depid" name="coursetobeadded.depid">
+            </mat-form-field>   
+            <div   style="display:flex; justify-content: flex-end;">
+            <button class="mat-secondary" mat-stroked-button style="margin:20px" routerLink='/courses'  (click)="addcourse()">Save</button>
+            </div>  
+           
+    </div>
+
+</div>
+

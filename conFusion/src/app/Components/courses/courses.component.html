@@ -1,0 +1,78 @@
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+    <div >
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <h3>Our Courses</h3>
+            <button mat-stroked-button color="secondary" routerLink="/addcourse">Add Course</button>
+        </div>
+
+    </div>
+
+    <!-- <div fxFlex>
+            
+            <mat-card *ngFor="let course of Courses" > 
+                <div  fxLayout="row" fxLayoutAlign="space-between center">
+                    <div>
+                    {{course.coursename | uppercase}}
+                    </div>
+                    <div > 
+                        <button mat-stroked-button style="margin:20px " class="yellow" (click)="sendtobeupdated(course)">Edit</button>
+                        <button mat-stroked-button style="margin:20px"  class="red"(click)="checkdelete(course)" >Delete</button>
+                        <button mat-stroked-button style="margin:20px" routerLink = "/enrollcourse" (click)=sendtobeupdated(course) >Enroll</button>
+                        
+                        
+                    </div>
+                </div>
+            </mat-card>
+           
+    </div> -->
+
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="Course Id">
+      <th mat-header-cell *matHeaderCellDef> Course Id </th>
+      <td mat-cell *matCellDef="let course"> {{course.courseid}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Course Name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let course"> {{course.coursename}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Course CreditHours">
+      <th mat-header-cell *matHeaderCellDef> Weight </th>
+      <td mat-cell *matCellDef="let course"> {{course.credithours}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Course Dep">
+      <th mat-header-cell *matHeaderCellDef> Course Dep ID </th>
+      <td mat-cell *matCellDef="let course"> {{course.depid}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="Buttons">
+        <th mat-header-cell *matHeaderCellDef> Buttons </th>
+        <td mat-cell *matCellDef="let course"> 
+             
+                <button mat-stroked-button style="margin:20px " class="yellow" routerLink = '/editcourse' (click)="sendtobeedited(course)">Edit</button>
+                <button mat-stroked-button style="margin:20px"  class="red"(click)="checkdelete(course)" >Delete</button>
+                <button mat-stroked-button style="margin:20px" routerLink = "/enrollcourse" (click)=sendtobeupdated(course) >Enroll</button>
+                
+        </td>
+      </ng-container>
+      
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+  </table>
+<mat-paginator [pageSizeOptions] ="[5,10,15]" > 
+
+</mat-paginator>
+
